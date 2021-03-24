@@ -3,7 +3,11 @@
 
 Tema presupune implementarea unui procesor de texte distribuit folosind MPI si pthreads.
 
+#### COMPILARE SI RULARE
+          COMPILARE:    make
+          RULARE:       make run
 
+#### IMPLEMENTARE
 Am inceput prin a creea 5 noduri MPI, primul cu rank=0 reprezentand Master-ul
 si restul workeri. In nodul Master se pornesc 4 thread-uri care se ocupa fiecare
 cu un tip de paragraf. Fiecare thread citeste din fisierul de intrare si formeaza,
@@ -24,4 +28,4 @@ comedy, fantasy si science-fiction, aplicand functiile care modifica siruri in
 mod corespunzator. Apoi ce s-a prelucrat se trimite inapoi la Master pt a fi
 afisat in fisier.
 
-MENTIUNE: Nu am implementat separares logicii de citire si procesare in workeri.
+MENTIUNE: Nu am implementat separarea logicii de citire si procesare in workeri.
