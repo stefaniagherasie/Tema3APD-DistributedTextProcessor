@@ -1,12 +1,11 @@
 # Tema3APD-DistributedTextProcessor
 [Tema3 Algoritmi Paraleli si Distribuiti (2020-2021, seria CB)] 
 
-Tema presupune implementarea unui procesor de texte distribuit folosind MPI si pthreads.
+Tema presupune implementarea unui procesor de texte distribuit folosind MPI si pthreads. <br>
 Enunt: https://curs.upb.ro/pluginfile.php/471635/mod_resource/content/1/Tema%203.pdf
 
 #### COMPILARE SI RULARE
-          COMPILARE:    make
-          RULARE:       make run
+          make & make run
 
 #### IMPLEMENTARE
 Am inceput prin a creea 5 noduri MPI, primul cu rank=0 reprezentand Master-ul
