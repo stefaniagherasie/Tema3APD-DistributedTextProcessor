@@ -11,7 +11,9 @@ Enunt: https://curs.upb.ro/pluginfile.php/471635/mod_resource/content/1/Tema%203
 
 #### IMPLEMENTARE
 Am inceput prin a creea 5 noduri MPI, primul cu rank=0 reprezentand Master-ul
-si restul workeri. In nodul `Master` se pornesc 4 thread-uri care se ocupa fiecare
+si restul workeri. 
+
+In nodul `Master` se pornesc 4 thread-uri care se ocupa fiecare
 cu un tip de paragraf. Fiecare thread citeste din fisierul de intrare si formeaza,
 linie cu linie, paragraful care va fi trimis workerului corespunzator. <br> Acesta
 trimite dimensiunea si paragraful, tinand minte si numarul acestuia din fisier.
@@ -24,7 +26,7 @@ Avand o variabila globala `current`, se parcurge fiecare numar din intervalul
 [1, num_paragraphs] si se gaseste map-ul care contine paragraful si acesta 
 este scris in fisier. Astfel se asigura scrierea in ordine a textelor.
 
-Workeri asteapta paragrafe de prelucrat pana primesc -1. In functie de workerul
+`Workeri` asteapta paragrafe de prelucrat pana primesc -1. In functie de workerul
 in care ne aflam, paragrafele se prelucreaza conform regulilor pentru horror, 
 comedy, fantasy si science-fiction, aplicand functiile care modifica siruri in
 mod corespunzator. Apoi ce s-a prelucrat se trimite inapoi la Master pt a fi
