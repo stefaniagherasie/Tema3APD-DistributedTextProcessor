@@ -5,20 +5,22 @@ Tema presupune implementarea unui procesor de texte distribuit folosind MPI si p
 Enunt: https://curs.upb.ro/pluginfile.php/471635/mod_resource/content/1/Tema%203.pdf
 
 #### COMPILARE SI RULARE
+```shell
           make & make run
+```
 
 #### IMPLEMENTARE
 Am inceput prin a creea 5 noduri MPI, primul cu rank=0 reprezentand Master-ul
-si restul workeri. In nodul Master se pornesc 4 thread-uri care se ocupa fiecare
+si restul workeri. In nodul `Master` se pornesc 4 thread-uri care se ocupa fiecare
 cu un tip de paragraf. Fiecare thread citeste din fisierul de intrare si formeaza,
-linie cu linie, paragraful care va fi trimis workerului corespunzator. Acesta
+linie cu linie, paragraful care va fi trimis workerului corespunzator. <br> Acesta
 trimite dimensiunea si paragraful, tinand minte si numarul acestuia din fisier.
 Primeste de la worker paragraful procesat si il adauga intr-un map in care 
 thread-ul pastreaza toate paragrafele procesate, avand ca cheie numarul lor 
 din fisier. Cand se termina citirea pentru toate thread-urile, se trimite un 
 mesaj care contine -1 care anunta workeri ca s-au prelucrat toate paragrafele.
 
-Avand o variabila globala (current), se parcurge fiecare numar din intervalul
+Avand o variabila globala `current`, se parcurge fiecare numar din intervalul
 [1, num_paragraphs] si se gaseste map-ul care contine paragraful si acesta 
 este scris in fisier. Astfel se asigura scrierea in ordine a textelor.
 
